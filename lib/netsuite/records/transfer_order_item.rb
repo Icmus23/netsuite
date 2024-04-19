@@ -6,9 +6,9 @@ module NetSuite
       include Support::Records
       include Namespaces::TranInvt
 
-      fields :amount, :average_cost, :klass, :commit_inventory, :description,
+      fields :amount, :average_cost, :commit_inventory, :description,
              :expected_receipt_date, :expected_ship_date, :inventory_detail, :is_closed, :last_purchase_price,
-             :line, :options, :order_priority, :quantity, :quantity_available,
+             :line, :order_priority, :quantity, :quantity_available,
              :quantity_back_ordered, :quantity_committed, :quantity_fulfilled,
              :quantity_on_hand, :quantity_packed, :quantity_picked, :quantity_received,
              :rate, :serial_numbers
@@ -16,7 +16,7 @@ module NetSuite
       field :options, CustomFieldList
       field :custom_field_list, CustomFieldList
 
-      record_refs :department, :item, :units
+      record_refs :department, :item, :units, :klass
 
       def initialize(attributes_or_record = {})
         case attributes_or_record

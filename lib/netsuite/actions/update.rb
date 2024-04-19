@@ -1,7 +1,7 @@
 # https://system.netsuite.com/help/helpcenter/en_US/Output/Help/SuiteCloudCustomizationScriptingWebServices/SuiteTalkWebServices/update.html
 module NetSuite
   module Actions
-    class Update
+    class Update < AbstractAction
       include Support::Requests
 
       attr_reader :response_hash
@@ -74,6 +74,10 @@ module NetSuite
         error_obj.map do |error|
           NetSuite::Error.new(error)
         end
+      end
+
+      def action_name
+        :update
       end
 
       module Support
